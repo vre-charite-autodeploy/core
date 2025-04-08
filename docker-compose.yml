@@ -1,0 +1,41 @@
+
+services:
+  db:
+    image: postgres:16.3
+    container_name: VRE-DB-dev
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=kc_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=keycloak
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  keycloak:
+    image: vre-keycloak:dev
+    build: ./keycloak
+    container_name: VRE-KC-dev
+    ports:
+      - '8080:8080'
+    environment:
+      # Configure database parameters
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://db/kc_db
+      - KC_DB_SCHEMA=public
+      - KC_DB_URL_DATABASE=kc_db
+      - KC_DB_USERNAME=postgres
+      - KC_DB_PASSWORD=keycloak
+      # Set default admin cuser
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      # Enable health and metrics support
+      - KC_HEALTH_ENABLED=true
+      - KC_METRICS_ENABLED=true
+      # Set relative path for Keycloak
+      - KC_HTTP_RELATIVE_PATH=/vre/auth
+      - KC_HOSTNAME=localhost
+    depends_on:
+      - db
+
+volumes:
+  db_data:

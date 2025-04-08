@@ -1,0 +1,25 @@
+
+services:
+  db:
+    container_name: VRE-DB-prod
+
+  keycloak:
+    image: vre-keycloak:prod
+    container_name: VRE-KC-prod
+
+  portal:
+    image: vre-portal:prod
+    build: 
+      context: ./portal
+      dockerfile: Dockerfile
+      args:
+      - PORTAL_ENV=prod
+    container_name: VRE-PORTAL-prod
+    volumes:
+      - './portal:/app'
+      - '/app/node_modules'
+    ports:
+      - '3000:80'
+    env_file:
+      - path: ./portal/.env
+

@@ -1,0 +1,49 @@
+// Copyright 2022 Indoc Research
+// 
+// Licensed under the EUPL, Version 1.2 or – as soon they
+// will be approved by the European Commission - subsequent
+// versions of the EUPL (the "Licence");
+// You may not use this work except in compliance with the
+// Licence.
+// You may obtain a copy of the Licence at:
+// 
+// https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+// 
+// Unless required by applicable law or agreed to in
+// writing, software distributed under the Licence is
+// distributed on an "AS IS" basis,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+// express or implied.
+// See the Licence for the specific language governing
+// permissions and limitations under the Licence.
+// 
+
+.tags-container {
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+  width: max-content;
+  :global {
+    .ant-tag {
+      margin-left: 8px;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.statistics {
+  margin-left: 40px;
+  line-height: 32px;
+  .statistics-title {
+    color: #818181;
+    font-size: 14px;
+  }
+
+  .statistics-value {
+    color: #003262;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+}
+

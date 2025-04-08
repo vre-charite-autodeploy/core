@@ -1,0 +1,114 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Poetry
+__pypackages__/
+*.whl
+
+# Pyenv 
+.python-version 
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Fastapi
+alembic/
+alembic.ini
+*.sqlite
+
+# C extensions
+*.so
+
+# Distribution and packaging
+.Python
+.installed.cfg
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+*.egg
+*.egg-info/
+lib/
+lib64/
+.next/
+node_modules/
+out/
+parts/
+sdist/
+*.tar*
+var/
+wheels/
+*.zip
+MANIFEST
+*.manifest
+*.spec
+
+# Local Env files
+ENV/
+env/
+.env*
+venv/
+.venv/
+!.env.schema
+!.env.template
+
+# Installer logs 
+pip-log.txt 
+pip-delete-this-directory.txt 
+
+# Jupyter 
+.ipynb_checkpoints 
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+/logs
+
+# Temp files
+temp/
+tmp/
+
+# Test files
+.cache
+coverage/
+coverage.xml
+.coverage*
+*.cover
+htmlcov/
+.hypothesis/ 
+nosetests.xml
+.nyc_output
+output/
+.pytest_cache/
+.tox/
+
+# Editor
+.history
+.idea
+.vscode
+*.iml
+*.iws
+*.iws.*
+*.ipr
+
+# System
+*.DS_Store
+Thumbs.db
+
+# Translations
+*.mo
+*.pot
+
+#Terraform
+*.tfstate*
+*.terraform*
